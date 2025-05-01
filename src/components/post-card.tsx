@@ -18,7 +18,7 @@ import {
     TooltipTrigger,
 } from '@/components/ui/tooltip';
 
-export default function TwitterTextPost() {
+export default function PostCard() {
     const [liked, setLiked] = useState(false);
     const [retweeted, setRetweeted] = useState(false);
     const [bookmarked, setBookmarked] = useState(false);
@@ -107,11 +107,11 @@ export default function TwitterTextPost() {
                         <Tooltip>
                             <TooltipTrigger asChild>
                                 <button
-                                    className={group flex items-center gap-1 ${retweeted ? 'text-green-500' : 'text-gray-500 hover:text-green-500'} transition-colors}
+                                    className={`group flex items-center gap-1 ${retweeted ? 'text-green-500' : 'text-gray-500 hover:text-green-500'} transition-colors`}
                                     onClick={handleRetweet}
                                 >
-                                    <div className={p-2 rounded-full ${retweeted ? 'bg-green-500/10' : 'group-hover:bg-green-500/10'} transition-all duration-200 transform group-hover:scale-110}>
-                                        <Repeat2 size={18} className={transition-transform ${retweeted ? 'rotate-180' : 'group-hover:rotate-45'}} />
+                                    <div className={`p-2 rounded-full ${retweeted ? 'bg-green-500/10' : 'group-hover:bg-green-500/10'} transition-all duration-200 transform group-hover:scale-110`}>
+                                        <Repeat2 size={18} className={`transition-transform ${retweeted ? 'rotate-180' : 'group-hover:rotate-45'}`} />
                                     </div>
                                     <span className="text-sm">{formatNumber(retweetCount)}</span>
                                 </button>
@@ -122,13 +122,13 @@ export default function TwitterTextPost() {
                         <Tooltip>
                             <TooltipTrigger asChild>
                                 <button
-                                    className={group flex items-center gap-1 ${liked ? 'text-pink-500' : 'text-gray-500 hover:text-pink-500'} transition-colors}
+                                    className={`group flex items-center gap-1 ${liked ? 'text-pink-500' : 'text-gray-500 hover:text-pink-500'} transition-colors`}
                                     onClick={handleLike}
                                 >
-                                    <div className={p-2 rounded-full ${liked ? 'bg-pink-500/10' : 'group-hover:bg-pink-500/10'} transition-all duration-200 transform group-hover:scale-110}>
+                                    <div className={`p-2 rounded-full ${liked ? 'bg-pink-500/10' : 'group-hover:bg-pink-500/10'} transition-all duration-200 transform group-hover:scale-110`}>
                                         <Heart
                                             size={18}
-                                            className={${liked ? 'fill-pink-500' : ''} transition-transform duration-300 ${liked ? 'scale-110' : 'group-hover:scale-125 group-hover:animate-pulse'}}
+                                            className={`${liked ? 'fill-pink-500' : ''} transition-transform duration-300 ${liked ? 'scale-110' : 'group-hover:scale-125 group-hover:animate-pulse'}`}
                                         />
                                     </div>
                                     <span className="text-sm">{formatNumber(likeCount)}</span>
@@ -153,10 +153,10 @@ export default function TwitterTextPost() {
                             <Tooltip>
                                 <TooltipTrigger asChild>
                                     <button
-                                        className={p-2 rounded-full ${bookmarked ? 'text-blue-500 bg-blue-500/10' : 'text-gray-500 hover:text-blue-500 hover:bg-blue-500/10'} transition-all duration-200 transform hover:scale-110}
+                                        className={`p-2 rounded-full ${bookmarked ? 'text-blue-500 bg-blue-500/10' : 'text-gray-500 hover:text-blue-500 hover:bg-blue-500/10'} transition-all duration-200 transform hover:scale-110`}
                                         onClick={handleBookmark}
                                     >
-                                        <Bookmark size={18} className={transition-transform duration-300 ${bookmarked ? 'fill-blue-500 scale-110' : ''}} />
+                                        <Bookmark size={18} className={`transition-transform duration-300 ${bookmarked ? 'fill-blue-500 scale-110' : ''}`} />
                                     </button>
                                 </TooltipTrigger>
                                 <TooltipContent>Bookmark</TooltipContent>
