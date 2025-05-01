@@ -35,6 +35,7 @@ const postSchema = new mongoose.Schema(
     ],
     eventDateTime: {
       type: Date,
+      // default: () => new Date(),
     },
     imageUrl: {
       type: String,

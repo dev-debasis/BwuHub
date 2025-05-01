@@ -18,9 +18,8 @@ export const POST = async (req, res) => {
 //   const docs = await searchSimilarDocs(embedding); // returns top k relevant docs
 
   // 3. Combine query + context
-//   const context = docs.map(doc => doc.text).join("\n");
-//   const prompt = `Answer the following based on the context:\n${context}\n\nQuestion: ${query}`;
-  const prompt = `Answer the following qustion:\n\nQuestion: ${query}`;
+  const context = docs.map(doc => doc.text).join("\n");
+  const prompt = `Answer the following based on the context:\n${context}\n\nQuestion: ${query}`;
 
   // 4. Query Gemini
   const response = await ai.models.generateContent({
