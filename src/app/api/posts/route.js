@@ -1,30 +1,33 @@
+import { NextResponse } from "next/server";
+import { createPosts } from "@/queries/posts";
 import { dbConnect } from "@/lib/mongo";
-import Post from "@/";
-import { getAuthUser } from "@/lib/auth";
 
-export const POST = async (request) => {
-  await dbConnect();
-  const user = await getAuthUser(request);
-  if (!user) return new Response("Unauthorized", { status: 401 });
+export const POST =  async (request) => {
+    const {userid, title, content, tags} = await request.json();
 
-  const body = await request.json();
-  const { title, content, tags, eventDateTime, location, imageUrl } = body;
+    // Create a DB Connection
+    await dbConnect();
+    
+    // Form a DB payload
+    const newPost = {
+        _id: userid,
+        title,
+        content,
+        tags,
+    }
 
-  const newPost = new Post({
-    author: user._id,
-    authorAvatar: user.userAvatar,
-    title,
-    content,
-    tags,
-    eventDateTime,
-    location,
-    imageUrl
-  });
+    // Update the DB
+    try{
+        await createPost(newPost);
+    }catch(err){
+        console.log(err.message);
+        return new NextResponse(err.message, {
+            status: 500,
+        });
+    }
 
-  try {
-    await newPost.save();
-    return new Response(JSON.stringify(newPost), { status: 201 });
-  } catch (err) {
-    return new Response(err.message, { status: 500 });
-  }
-};
+    return new NextResponse('Post has been created', {
+        status: 201,
+    });
+
+}
