@@ -1,3 +1,10 @@
+## Landing
+![Landing Page](./public/images/BwuHub.png)
+
+## BWU Feed
+![News Feed](./public/images/Feed.jpg)
+
+
 # 🧠 BWU Hub – AI-Powered Campus Assistant & Community Feed
 
 A modern web application designed for educational institutions to enhance student engagement and streamline event communication. Built during the XiBit Hackathon 2025.
