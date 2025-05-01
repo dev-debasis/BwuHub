@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button";
 import { doLogout } from "@/app/actions";
+import PostCard from '@/components/post-card';
 
 const DashboardPage = async () => {
   const session = await auth();
@@ -27,7 +28,7 @@ const DashboardPage = async () => {
         <Button type="submit">Logout</Button>
       </form>
 
-      <Post/>
+      <PostCard/>
 
     </div>
   )
