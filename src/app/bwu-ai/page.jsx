@@ -48,18 +48,32 @@ export default function ChatInterface() {
     messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async (e) => {
+    console.log('form')
+    // e.preventDefault();
+
     if (inputText.trim() === '') return;
+
+    const query = inputText;
+    setMessages(prev => [...prev, { text: query, isBot: false }]);
+    setInputText('');
+
+    
+    const res = await fetch("/api/rag", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query}),
+      });
+      const data = await res.json();
     
     // Add user message
-    setMessages(prev => [...prev, { text: inputText, isBot: false }]);
-    setInputText('');
+    
     
     // Simulate bot typing and response (would be an API call in a real app)
     setTimeout(() => {
-      const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
-      setMessages(prev => [...prev, { text: randomResponse, isBot: true }]);
+      setMessages(prev => [...prev, { text: data.answer, isBot: true }]);
     }, 1000);
+
   };
 
   const handleKeyDown = (e) => {
@@ -90,7 +104,9 @@ export default function ChatInterface() {
       {/* Input area */}
       <div className="border-t border-gray-700 p-4 bg-gray-800">
         <div className="flex items-center gap-2">
+        <form onSubmit={handleSendMessage}>
           <textarea
+            name="query"
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             onKeyDown={handleKeyDown}
@@ -99,7 +115,6 @@ export default function ChatInterface() {
             rows={1}
           />
           <button
-            onClick={handleSendMessage}
             disabled={inputText.trim() === ''}
             className={`p-3 rounded-md ${
               inputText.trim() === '' 
@@ -109,6 +124,7 @@ export default function ChatInterface() {
           >
             <Send size={20} />
           </button>
+            </form>
         </div>
       </div>
     </div>

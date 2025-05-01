@@ -239,6 +239,7 @@ export default function TwitterDashboard() {
               <div className={`sticky top-0 z-10 ${bgColor} border-b ${borderColor} px-4 py-3`}>
                 <div className="flex items-center justify-between mb-2">
                   <h1 className="text-xl font-bold">Home</h1>
+                  <a href="/bwu-ai"><h1 className="text-xl font-bold">BWU AI</h1></a>
                   <Settings size={20} className="cursor-pointer" />
                 </div>
                 <Tabs defaultValue="for-you" className="w-full">

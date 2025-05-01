@@ -1,0 +1,67 @@
+[
+    {
+      "name": "Dr. Avijit Kumar Chaudhuri",
+      "designation": "Professor & Dean (School of Computational & Applied Sciences)",
+      "qualification": "PhD (Engg), M.Tech (CSE), B.Tech (CSE)",
+      "experience": "20+ Years",
+      "area_of_interest": ["Machine Learning", "AI", "Image Processing", "Data Science"],
+      "email": "avijit.chaudhuri@brainwareuniversity.ac.in"
+    },
+    {
+      "name": "Dr. Kalyan Sundar Kola",
+      "designation": "Professor & HOD",
+      "qualification": "PhD (CSE), M.Tech (IT), B.Tech (CSE)",
+      "experience": "18 Years",
+      "area_of_interest": ["IoT", "Cloud Computing", "Big Data", "Distributed Systems"],
+      "email": "kalyansundar.kola@brainwareuniversity.ac.in"
+    },
+    {
+      "name": "Dr. Riya Sil",
+      "designation": "Associate Professor",
+      "qualification": "PhD (Engg), M.Tech (CSE), B.Tech (CSE)",
+      "experience": "12 Years",
+      "area_of_interest": ["Machine Learning", "Data Mining", "Bioinformatics"],
+      "email": "riya.sil@brainwareuniversity.ac.in"
+    },
+    {
+      "name": "Dr. Sahabul Alam",
+      "designation": "Associate Professor",
+      "qualification": "PhD, M.Tech (IT), B.Tech (IT)",
+      "experience": "10+ Years",
+      "area_of_interest": ["Cyber Security", "AI", "NLP"],
+      "email": "sahabul.alam@brainwareuniversity.ac.in"
+    },
+    {
+      "name": "Dr. Daizy Deb",
+      "designation": "Associate Professor",
+      "qualification": "PhD, M.Tech, B.Tech",
+      "experience": "12 Years",
+      "area_of_interest": ["Neural Networks", "Deep Learning", "Computer Vision"],
+      "email": "daizy.deb@brainwareuniversity.ac.in"
+    },
+    {
+      "name": "Dr. Sanjay Kumar Sen",
+      "designation": "Assistant Professor",
+      "qualification": "PhD, M.Tech, B.Tech",
+      "experience": "8 Years",
+      "area_of_interest": ["Wireless Sensor Networks", "Embedded Systems"],
+      "email": "sanjay.sen@brainwareuniversity.ac.in"
+    },
+    {
+      "name": "Amartya Ghosh",
+      "designation": "Assistant Professor",
+      "qualification": "M.Tech (CSE), B.Tech (CSE)",
+      "experience": "6 Years",
+      "area_of_interest": ["Web Development", "Software Engineering"],
+      "email": "amartya.ghosh@brainwareuniversity.ac.in"
+    },
+    {
+      "name": "Atanu Banerjee",
+      "designation": "Assistant Professor",
+      "qualification": "M.Tech (IT), B.Tech (IT)",
+      "experience": "5 Years",
+      "area_of_interest": ["Operating Systems", "Networking"],
+      "email": "atanu.banerjee@brainwareuniversity.ac.in"
+    }
+  ]
+  

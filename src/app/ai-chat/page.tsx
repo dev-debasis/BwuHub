@@ -23,6 +23,7 @@ export default function Home() {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          name="query"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="border p-2 w-full"

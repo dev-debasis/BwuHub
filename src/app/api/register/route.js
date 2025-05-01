@@ -46,5 +46,5 @@ function jsonToFormData(json) {
       }
     }
     return formData;
-  }
+}
   
