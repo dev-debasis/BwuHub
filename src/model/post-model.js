@@ -5,16 +5,14 @@ const postSchema = new mongoose.Schema(
     author: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true,
     },
+
     title: {
       type: String,
-      required: true,
       trim: true,
     },
     content: {
       type: String,
-      required: true,
     },
     authorAvatar: {
         type: String,
@@ -60,4 +58,6 @@ const postSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Post", postSchema);
+// module.exports = mongoose.model("Post", postSchema);
+
+export const Post = mongoose.models.Post ?? mongoose.model("Post", postSchema);

@@ -8,6 +8,11 @@ import PostCard from '@/components/post-card';
 const DashboardPage = async () => {
   const session = await auth();
   if(!session?.user) redirect("/login");
+  const getPosts = async ()=> {
+
+  }
+  const posts = await getPosts(session.user?._id);
+  
   return (
     <div className='flex flex-col items-center m-4'>
       {
@@ -23,10 +28,11 @@ const DashboardPage = async () => {
         ): (<h1 className='text-3xl my-2'>{session?.user?.name}</h1>)
       }
       
-
       <form action={doLogout}>
         <Button type="submit">Logout</Button>
       </form>
+
+
 
       <PostCard/>
 

@@ -18,7 +18,7 @@ import {
     TooltipTrigger,
 } from '@/components/ui/tooltip';
 
-export default function PostCard() {
+export default function PostCard({title, content, tags}) {
     const [liked, setLiked] = useState(false);
     const [retweeted, setRetweeted] = useState(false);
     const [bookmarked, setBookmarked] = useState(false);
@@ -28,7 +28,7 @@ export default function PostCard() {
     const [commentCount, setCommentCount] = useState(746);
     const [viewCount, setViewCount] = useState(1600000);
 
-    const formatNumber = (num: number): string => {
+    const formatNumber = (num) => {
         if (num >= 1000000) {
             return (num / 1000000).toFixed(1) + 'M';
         } else if (num >= 1000) {
