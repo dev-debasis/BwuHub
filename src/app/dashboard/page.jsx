@@ -26,6 +26,9 @@ const DashboardPage = async () => {
       <form action={doLogout}>
         <Button type="submit">Logout</Button>
       </form>
+
+      <Post/>
+
     </div>
   )
 }
