@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server";
 import { createPosts } from "@/queries/posts";
 import { dbConnect } from "@/lib/mongo";
+import { log } from "console";
 
 export const POST =  async (request) => {
     const {userid, title, content, tags} = await request.json();
+    console.log("--------------------------------------------------------------")
+    console.log("CHECK",userid)
+
 
     // Create a DB Connection
     await dbConnect();
