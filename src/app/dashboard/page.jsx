@@ -23,7 +23,6 @@ const DashboardPage = async () => {
         ): (<h1 className='text-3xl my-2'>{session?.user?.name}</h1>)
       }
       
-
       <form action={doLogout}>
         <Button type="submit">Logout</Button>
       </form>
