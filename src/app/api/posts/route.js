@@ -18,7 +18,7 @@ export const POST =  async (request) => {
 
     // Update the DB
     try{
-        await createPost(newPost);
+        await createPosts(newPost);
     }catch(err){
         console.log(err.message);
         return new NextResponse(err.message, {
